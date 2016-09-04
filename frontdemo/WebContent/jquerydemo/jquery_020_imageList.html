@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery_020_imageList</title>
+<style type="text/css">
+
+*{
+margin:0px;
+padding:0px;
+
+}
+ul{
+	width:300px;
+	
+}
+ul li{
+	border:2px solid black;
+	text-align:center;
+	width:90px;
+	list-style: none;
+	float:left;
+	
+}
+input{
+width:20px;
+
+}
+
+</style>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+	$(document).ready(function(){
+		var imgList=["pic_t1.jpg","pic_t2.jpg","pic_t3.jpg","pic_t4.jpg","pic_t5.jpg","pic_t6.jpg","pic_t7.jpg","pic_t8.jpg"];
+	
+			$.each(imgList,function(index, value){
+					//$("ul").append("<li><img src='images/"+value+"'/></li>");
+				$("ul").append("<li><img src='images/"+value+"'/><input type = 'checkbox' class = 'chk'/><label>이미지"+(index+1)+"</label></li>");
+			});
+			
+			
+			$(".check_all").bind("click", function() {
+				
+				$("input[type=checkbox]").prop("checked",this.checked);
+			});
+	
+			
+			$("button").click(function(){
+				$("input[type=checkbox]:checked").each(function(){
+					//parents("부모요소") : 부모요소들중에 li
+					//parent()도 가능 -> 바로 부모이기때문
+					$(this).parents("li").remove();
+				});
+			});
+	});
+
+	
+</script>
+</head>
+<body>
+<button>삭제</button>
+<input type="checkbox" class="check_all"/>전체선택
+<ul>
+	
+</ul>
+</body>
+</html>

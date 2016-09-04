@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery_002_selector</title>
+<style type="text/css">
+
+</style>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script> //HTML5에서는 type 없이 script와/script만 사용해도 된다.
+$(document).ready(function(){
+	$("*").css({"margin":"0","padding":"0"});
+	//div 요소에 스타일을 지정한다.
+	$("div").css({"background-color":"green","width":"200px","height":"200px"});
+	$("#line").css({"color":"blue"});
+	$(".common").css({"border":"1px solid black"});
+	//a라는 요소에 href라는 속성이 있으면 이라는 뜻.
+	$("a[href]").css({"color":"red"});
+	
+	
+});
+
+</script>
+</head>
+<body>
+<div></div>
+<p id = "line">line</p>
+<p class="common">common</p>
+<a href="#">korea</a>
+</body>
+</html>

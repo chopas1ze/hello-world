@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>script_041_function</title>
+<style type="text/css">
+</style>
+<script type="text/javascript">
+	
+</script>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+		 * function 함수명(){
+		 실행 문장;
+		 }
+
+		 //익명함수를 선언하고 변수에 참조시킨다.
+		 var 참조변수 = function(){실행문장};
+		 호출 : 참조변수()
+		 */
+
+		var i = 0;
+		function myFun() {
+			i++;
+			document.write("hello" + i);
+		}
+		//익명의 함수를 정의할때는 실행문장 마지막에 return을 정의한다.(참조변수에 값이 저장되어야 하기 때문에)
+		var test = function(x) {
+			return "hello" + x;
+		};
+		//익명의 함수를 정의할때 실맹문장에 return대신 결과물의 실행문장이 있으면 return이 없어도 된다.
+		var process = function(x) {
+			document.write("hello" + x);
+		};
+
+		myFun();
+		document.write("<hr/>");
+		document.write(myFun);
+		document.write("<hr/>");
+		document.write(test(10));
+		document.write("<hr/>");
+		process(20);
+	</script>
+</body>
+</html>

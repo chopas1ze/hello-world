@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>index</title>
+<style type="text/css">
+* {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+div.main {
+	width: 1000px;
+	height: 800px;
+	position: relative;
+}
+
+.menu {
+	position: absolute;
+	width: 990px;
+	height: 130px;
+	border: 2px solid orange;
+	margin: 3px;
+	top: 0px;
+	left: 0px;
+}
+
+.menu1 {
+	position: absolute;
+	width: 990px;
+	height: 37px;
+	top: 0px;
+	left: 0px;
+	margin-bottom: 3px;
+}
+
+.menu2 {
+	position: absolute;
+	width: 990px;
+	height: 94px;
+	margin-bottom: 3px;
+	top: 40px;
+	left: 0px;
+}
+
+.left {
+	position: absolute;
+	width: 140px;
+	height: 710px;
+	border: 2px solid yellow;
+	margin: 3px;
+	top: 140px;
+	left: 0px;
+}
+
+.right {
+	position: absolute;
+	width: 140px;
+	height: 710px;
+	border: 2px solid blue;
+	top: 140px;
+	left: 850px;
+	margin: 3px;
+}
+
+.center {
+	position: absolute;
+	width: 690px;
+	height: 490px;
+	border: 2px solid green;
+	margin: 3px;
+	top: 140px;
+	left: 150px;
+	font-weight: bold;
+	font-size: 25px;
+	letter-spacing: -1px;
+	line-height: 80px;
+	z-index: 1;
+}
+
+.cbottom {
+	position: absolute;
+	width: 690px;
+	height: 210px;
+	border: 2px solid aqua;
+	margin: 3px;
+	top: 640px;
+	left: 150px;
+}
+
+.bottom {
+	position: absolute;
+	width: 990px;
+	height: 130px;
+	border: 2px solid purple;
+	top: 860px;
+	left: 0px;
+	margin: 3px;
+}
+
+.hom {
+	position: absolute;
+	left: 820px;
+	line-height: 30px;
+}
+
+.login {
+	position: absolute;
+	left: 850px;
+	line-height: 30px;
+}
+
+.join {
+	position: absolute;
+	left: 910px;
+	line-height: 30px;
+}
+
+
+.home {
+	width: 198px;
+	background-image:url("./image/라이언.jpg");
+	background-position:center;
+	height: 90px;
+	position: absolute;
+	left: 0px;
+	border-right: 4px dotted #FF9900;
+	background-repeat: no-repeat;
+	background-size: 110%;
+}
+
+.menu01 {
+	width: 196px;
+	height: 90px;
+	position: absolute;
+	left: 198px;
+	text-align: center;
+	background-color: #ffd24d;
+	font-size: 20px;
+	color: white;
+	line-height: 91px;
+	border-right: 4px dotted #FF9900;
+}
+
+.menu02 {
+	width: 196px;
+	height: 90px;
+	position: absolute;
+	left: 396px;
+	text-align: center;
+	background-color: #ffd24d;
+	font-size: 20px;
+	color: white;
+	line-height: 91px;
+	border-right: 4px dotted #FF9900;
+}
+
+.menu03 {
+	width: 196px;
+	height: 90px;
+	position: absolute;
+	left: 594px;
+	text-align: center;
+	background-color: #ffd24d;
+	font-size: 20px;
+	color: white;
+	line-height: 91px;
+	border-right: 4px dotted #FF9900;
+}
+
+.menu04 {
+	width: 197px;
+	height: 90px;
+	position: absolute;
+	left: 793px;
+	text-align: center;
+	background-color: #ffd24d;
+	font-size: 20px;
+	color: white;
+	line-height: 91px;
+}
+
+.menu01-content {
+	z-index: 2;
+	display: none;
+	position: absolute;
+}
+
+.menu02-content {
+	z-index: 2;
+	display: none;
+	position: absolute;
+}
+
+.menu03-content {
+	z-index: 2;
+	display: none;
+	position: absolute;
+}
+
+.menu04-content {
+	z-index: 2;
+	display: none;
+	position: absolute;
+}
+
+a {
+	width: 196px;
+	height: 90px;
+	color: white;
+	background-color: #ffd24d;
+	text-decoration: none;
+	display: block;
+}
+
+.menu01:hover .menu01-content {
+	display: block;
+}
+
+.menu02:hover .menu02-content {
+	display: block;
+}
+
+.menu03:hover .menu03-content {
+	display: block;
+}
+
+.menu04:hover .menu04-content {
+	display: block;
+}
+</style>
+</head>
+<body>
+	<div class="main">
+		<div class="menu">
+			<div class="menu1">
+				<span class="hom">홈 <span>:</span></span> <span class="login">로그인
+					<span>:</span>
+				</span> <span class="join">회원가입</span>
+			</div>
+
+			<div class="menu2">
+				<button class="home"></button>
+				<div class="menu01">
+					MENU 01
+					<div class="menu01-content">
+						<a href="#">sub11</a> <a href="#">sub12</a> <a href="#">sub13</a>
+						<a href="#">sub14</a> <a href="#">sub15</a>
+					</div>
+				</div>
+				<div class="menu02">
+					MENU 02
+					<div class="menu02-content">
+						<a href="#">sub21</a> <a href="#">sub22</a> <a href="#">sub23</a>
+						<a href="#">sub24</a> <a href="#">sub25</a>
+					</div>
+				</div>
+				<div class="menu03">
+					MENU 03
+					<div class="menu03-content">
+						<a href="#">sub31</a> <a href="#">sub32</a> <a href="#">sub33</a>
+						<a href="#">sub34</a> <a href="#">sub35</a>
+					</div>
+				</div>
+				<div class="menu04">
+					MENU 04
+					<div class="menu04-content">
+						<a href="#">sub41</a> <a href="#">sub42</a> <a href="#">sub43</a>
+						<a href="#">sub44</a> <a href="#">sub45</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="left"></div>
+		<div class="right"></div>
+		<div class="center">So So한 이야기</div>
+		<div class="cbottom"></div>
+		<div class="bottom"></div>
+	</div>
+
+</body>
+</html>
