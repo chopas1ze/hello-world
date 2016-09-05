@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery_034_slide</title>
+<style type="text/css">
+
+</style>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+$(document).ready(function(){
+	$("#btnup").click(function(){
+		$("img").slideUp("slow",function(){
+			alert("slideUp end");
+		});
+	});
+	
+	$("#btndown").click(function(){
+		$("img").slideDown("fast",function(){
+			alert("slideDown end");
+		});
+	});
+	
+	$("#btntoggle").click(function(){
+		$("img").slideToggle("normal",function(){
+			alert("slideToggle end")
+		});
+	});
+	
+});
+
+
+</script>
+</head>
+<body>
+<button id="btnup">slideUp</button>
+<button id="btndown">slideDown</button>
+<button id="btntoggle">slideToggle</button>
+<br/>
+<img src="images/aa.jpg" />
+</body>
+</html>

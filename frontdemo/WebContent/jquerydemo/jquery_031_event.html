@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery_031_event</title>
+<style type="text/css">
+
+</style>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+/*
+ * keydown(), keypress()
+   :선택한 요소에서 키보드 자판을 눌렀을때 이벤트가 발생.
+   	차이점은 keydown()은  모든 자판에 대한 고유 키값을 가져올 수 있으나 
+   	keypress()은 문자(a~z,!,@,#,...등)자판에 대한 고유 키값을 
+   	가져올 수 없다.
+   	
+   	keyup(): 선택한요소에서 키보드에 자판을 눌렀다 떼었을때 이벤트가 발생한다.
+ */
+
+$(document).ready(function(){
+	$("input").bind("focus mouseover",function(){
+		$("div").css({"background-color":"yellow"});
+	});
+	
+	$("#fname").keydown(function(){
+		$("p").text("keydown");
+	});
+	
+	$("#fname").keypress(function(){
+		$("p").text("keypress");
+	});
+	
+	$("#fname").keyup(function(){
+		$("p").text("keyup");
+	});
+	
+});
+
+</script>
+</head>
+<body>
+<div>
+<input type="text" name="fid" id="fid"/>
+</div>
+<p></p>
+<button id="btn">keyboard</button>
+<input type="text" name="fid" id="fname"/>
+</body>
+</html>
