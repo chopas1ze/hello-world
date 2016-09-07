@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery_046_plugin_bxsilder</title>
+<link href="css/jquery.bxslider.css" type="text/css" rel="stylesheet" />
+<style type="text/css">
+
+</style>
+<script type= "text/javascript" src="js/jquery-1.10.2.js"></script>
+<script type= "text/javascript" src="js/jquery.bxslider.min.js"></script>
+<script>
+$(document).ready(function(){
+	var slider = $('.bxslider').bxSlider({
+		  mode: 'fade'
+		});
+
+		$('#slider-next').click(function(){
+		  slider.goToNextSlide();
+		  return false;
+		});
+
+		$('#slider-count').click(function(){
+		  var count = slider.getSlideCount();
+		  alert('Slide count: ' + count);
+		  return false;
+		});
+
+});
+
+</script>
+</head>
+<body>
+<ul class="bxslider">
+  <li><img src="images/pic_1.jpg" /></li>
+  <li><img src="images/pic_2.jpg" /></li>
+  <li><img src="images/pic_3.jpg" /></li>
+</ul>
+
+<p><a href="" id="slider-next">Click me to go to the next slide</a><br />
+<a href="" id="slider-count">Click me to see the total slide count</a></p>
+</body>
+</html>
