@@ -7,6 +7,8 @@
 <link rel="stylesheet" type="text/css" href="css/reset.css" media="all" />
 <link rel="stylesheet" type="text/css" href="css/base.css" media="all" />
 <link rel="stylesheet" type="text/css" href="css/main.css" media="all" />
+<link rel="stylesheet" type="text/css" href="css/common.css" media="all" />
+
 
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script> <!-- 제이쿼리 라이이브러리 연동 -->
 
@@ -23,6 +25,35 @@
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({pageLanguage: 'ko', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
 }
+
+  	$(document).ready(function(){
+	/*GNB 메뉴*/
+/*	$("#gnb li a").mouseover(function(){
+		//$(this).next().slideDown("fast");
+		//$(this).next().show("fast");
+		//$(this).next().fadeIn("slow");
+		$(this).next().css({"display":"block"});
+		
+	});
+	
+	$("#gnb li a").mouseleave(function(){
+		//$(this).next().slideUp("fast");
+		//$(this).next().hide("fast");
+		//$(this).next().fadeOut("slow");
+		$(this).next().css({"display":"none"});
+	}); */
+	
+
+/* 	$("#total_btn").click(function(){
+		$("#total_menu").css({"display":"block"});
+	});
+	
+	$("#total_close").click(function(){
+		$("#total_menu").css({"display":"none"});
+	});   */
+	
+	
+});
 </script>
 <script  src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
@@ -37,7 +68,7 @@ function googleTranslateElementInit() {
   <dl id="util_menu">
      <dt class="hide">유틸메뉴</dt>
      <dd class="util_first">
-        <ul>
+        <ul>  
            <li class="login_wrap">
            <a href="#">
            <img src="images/util_menu_1.gif" alt="로그인" />
@@ -91,7 +122,7 @@ function googleTranslateElementInit() {
         </ul>
      </dd>
      <dd>
-        <ul id="zoom">
+        <ul id="zoom"> 
            <li><img src="images/util_zoom_1.gif" alt="" /></li>
            <li>
             <a href="#" class="zoom_in"><img src="images/util_zoom_2.gif" alt="" /></a>
@@ -123,7 +154,7 @@ function googleTranslateElementInit() {
      </fieldset>
   </form>
   <h2 class="hide">메인메뉴</h2>
-  <ul id="gnb">
+  <ul id="gnb">	
      <li><a href="#"><img src="images/gnb_1_out.gif" alt="" /></a>
         <ul class="sub1">
            <li><a href="#">홈으로이동</a></li>
