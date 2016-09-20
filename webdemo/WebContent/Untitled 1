@@ -1,0 +1,27 @@
+서블릿 조건
+
+java
+tomcat
+eclipse
+
+
+Java Resources src -> class 생성
+Package : servletdemo.part01
+name : Basic 생성
+
+
+
+java : 로컬프로그램
+applet : client 컴퓨터에 설치가 되고 브라우저에서 실행된다(클라이언트 환경에 영향을 미치게 때문에 현재 사용안함)
+Servlet : 자바기반의 웹 프로그램(class) (컴파일이 필요하기때문에 불편함)
+jsp(java server programming) : 자바기반의 웹 프로그램(script)(소스를 서버에 다올리기때문에 보안에 취약)
+spring : MVC(모델 뷰 컨트롤)(model2) : 웹을 model2방식을 이용해서 구현할 수 있도록 제공해주는 프레임워크이다.(Servlet+jsp)
+
+
+
+자주보는 에러
+404 - 요청 페이지가 없을때
+500 - 문법오류(오타)
+400 - 서버오류(스프링할때 많이뜸) - 파라메터가 다를때
+name="pageNO"  클라이언트가 보낼때 
+String pageNo  서버가 받을때
