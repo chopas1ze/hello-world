@@ -25,3 +25,7 @@ spring : MVC(모델 뷰 컨트롤)(model2) : 웹을 model2방식을 이용해서
 400 - 서버오류(스프링할때 많이뜸) - 파라메터가 다를때
 name="pageNO"  클라이언트가 보낼때 
 String pageNo  서버가 받을때
+
+
+
+C:\study\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps  project explorer 실제경로
