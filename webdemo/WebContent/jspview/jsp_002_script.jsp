@@ -27,11 +27,13 @@
     public int getSum(){
     	return x+y;
     }
+    
  %>
  
  <%
  	int z = 20; //지역변수
  	setData(10,5);
+ 	
  %>
  
  <%=getSum() %>

@@ -14,7 +14,7 @@ name : Basic 생성
 java : 로컬프로그램
 applet : client 컴퓨터에 설치가 되고 브라우저에서 실행된다(클라이언트 환경에 영향을 미치게 때문에 현재 사용안함)
 Servlet : 자바기반의 웹 프로그램(class) (컴파일이 필요하기때문에 불편함)
-jsp(java server programming) : 자바기반의 웹 프로그램(script)(소스를 서버에 다올리기때문에 보안에 취약)
+jsp(java server pages) : 자바기반의 웹 프로그램(script)(소스를 서버에 다올리기때문에 보안에 취약)
 spring : MVC(모델 뷰 컨트롤)(model2) : 웹을 model2방식을 이용해서 구현할 수 있도록 제공해주는 프레임워크이다.(Servlet+jsp)
 
 
@@ -29,3 +29,19 @@ String pageNo  서버가 받을때
 
 
 C:\study\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps  project explorer 실제경로
+
+
+
+
+
+
+사용중인 아파치버전에 맞춰서 테스트한 jstl을 사용하는 방법
+(어떤 jstl이든 밑에 라이브러리 2개만 있으면 된다)
+
+C:\study\util\apache-tomcat-8.0.36\webapps\examples\WEB-INF\lib파일들을 
+
+ WebContent->web-inf->lib->에 복사
+
+
+
+
