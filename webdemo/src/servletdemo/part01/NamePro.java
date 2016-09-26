@@ -18,7 +18,7 @@ public class NamePro extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
 		//POST방식일때 한글 처리
-		req.setCharacterEncoding("UTF-8");
+		//req.setCharacterEncoding("UTF-8");
 		
 		String fname=req.getParameter("fname");
 		req.setAttribute("fname",fname);
