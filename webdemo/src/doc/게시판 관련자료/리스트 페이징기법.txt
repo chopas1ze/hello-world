@@ -2,6 +2,8 @@
 int currentPage = Integer.parseInt("pageNum");
 ////////////////////////////////////////////////////
 
+
+
 레코드의 총수
 int totalCount="select count(*) from board";
 

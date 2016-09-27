@@ -16,10 +16,10 @@ import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 
-@WebFilter(
+/*@WebFilter(
         urlPatterns = "/*",
         initParams = @WebInitParam(name = "test-param", value = "doc;xls;zip;txt;")        
-)
+)*/
 public class LogFilter implements Filter {
 
 	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
@@ -34,6 +34,7 @@ public class LogFilter implements Filter {
 		System.out.println("IP " + ipAddress + ", Time " + new Date().toString());
 
 		chain.doFilter(req, res);
+		
 	}
 
 	public void init(FilterConfig config) throws ServletException {		
