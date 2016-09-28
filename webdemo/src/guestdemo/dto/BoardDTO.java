@@ -6,7 +6,7 @@ public class BoardDTO {
 	private int num,readcount,ref,re_step,re_level;
 	private String writer,email,subject,content,ip,upload;
 	private Date reg_date;
-		
+	
 	
 	public String getUpload() {
 		return upload;

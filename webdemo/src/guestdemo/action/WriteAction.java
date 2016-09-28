@@ -2,6 +2,7 @@ package guestdemo.action;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -39,8 +40,20 @@ public class WriteAction {
 			dto.setSubject(multi.getParameter("subject"));
 			dto.setContent(multi.getParameter("content"));
 			dto.setUpload(multi.getFilesystemName("upload"));
-
 			BoardDAO dao = BoardDAO.getInstance();
+			
+			//답변글이면
+			if(multi.getParameter("re_level")!=null){
+				//re_step컬럼의 값을 1증가시키기 위해서 HashMap ref,re_step을 저장해서 넘긴다.
+				HashMap<String, Integer> map = new HashMap<String, Integer>();
+				map.put("ref", new Integer(multi.getParameter("ref")));
+				map.put("re_step", new Integer(multi.getParameter("re_step")));
+				dao.reStepMethod(map);
+				dto.setRef(Integer.parseInt(multi.getParameter("ref")));
+				dto.setRe_step(Integer.parseInt(multi.getParameter("re_step"))+1);
+				dto.setRe_level(Integer.parseInt(multi.getParameter("re_level"))+1);
+			}
+			
 			dao.insertMethod(dto);
 			
 		}//end excute()

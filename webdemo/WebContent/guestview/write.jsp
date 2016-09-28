@@ -38,6 +38,7 @@
 	<form name="frm" method="post" action="write.do"
 		enctype="multipart/form-data" onsubmit="return process()">
 		
+		<!-- 답변글이면 -->
 		<c:if test="${!empty param.num}">
 	    <input type="hidden" value="${param.num}" name="num"  />       
         <input type="hidden" value="${param.ref}" name="ref" />

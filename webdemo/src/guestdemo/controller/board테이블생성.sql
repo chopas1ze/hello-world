@@ -49,9 +49,20 @@ select * from board;
 
 
 
+update board set re_step=re_step+1 where ref=? and re_step < ?
+
+select num, ref, re_step, re_level from board order by num;
 
 
+인라인 뷰 방식(select값을 from절에 사용)
+
+select b.*
+ from(select rownum as rm, a.*
+ from(select * from board order by ref desc , re_step asc)a)b 
+ where b.rm >=? and b.rm <=?;
 
 
+select * from board order by ref desc , re_step asc
 
 
+select count(*) from board
