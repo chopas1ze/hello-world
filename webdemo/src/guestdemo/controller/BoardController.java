@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.oreilly.servlet.MultipartRequest;
+
 import guestdemo.action.ListAction;
 import guestdemo.action.ViewAction;
 import guestdemo.action.WriteAction;
@@ -53,8 +55,11 @@ public class BoardController extends HttpServlet {
 			path = "/guestview/view.jsp";
 		}else if(action.equals("/write.do")){
 			WriteAction write = new WriteAction();
-			write.excute(req, resp);
-			resp.sendRedirect("list.do");
+			MultipartRequest multi = write.excute(req, resp);
+			String param="?pageNum="+multi.getParameter("pageNum");
+		/*	param+="&searchKey="+multi.getParameter("searchKey");
+			param+="&searchWord="+multi.getParameter("searchWord");*/
+			resp.sendRedirect("list.do"+param);
 		}
 		
 		if(path!=""){

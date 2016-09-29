@@ -15,7 +15,8 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-
+	
+		
 	});
 
 	function process() {
@@ -45,6 +46,8 @@
  		<input type="hidden" value="${param.re_step}" name="re_step" />
  		<input type="hidden" value="${param.re_level}" name="re_level" />
  		<input type="hidden" value="${param.pageNum}" name="pageNum" />
+<%--  		<input type="hidden" name="searchKey" value="${param.searchKey}"/>
+		<input type="hidden" name="searchWord" value="${param.searchWord}"/> --%>
 		</c:if>
 
 		<table>

@@ -15,7 +15,7 @@ import guestdemo.dto.BoardDTO;
 
 public class WriteAction {
 
-		public void excute(HttpServletRequest req, HttpServletResponse resp) {
+		public MultipartRequest excute(HttpServletRequest req, HttpServletResponse resp) {
 			MultipartRequest multi=null;
 			String saveDirectory=req.getRealPath("/");
 			File file=new File(saveDirectory+"/temp");
@@ -56,6 +56,7 @@ public class WriteAction {
 			
 			dao.insertMethod(dto);
 			
+			return multi;
 		}//end excute()
 	
 }//end class

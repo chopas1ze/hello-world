@@ -17,6 +17,7 @@
 	$(document).ready(function() {
 		$('.list').bind('click', function() {
 			$('form').attr('action', 'list.do');
+			 
 			$('form').submit();
 		});
 
@@ -35,6 +36,7 @@
 			$('form').submit();
 		});
 	});
+	
 </script>
 </head>
 <body>
@@ -68,7 +70,7 @@
 			<td>내용</td>
 			
 			<td colspan="3">
-			${dto.content }
+			${dto.content}
 			</td>
 		</tr>
 
@@ -84,8 +86,10 @@
 			type="hidden" value="${dto.ref}" name="ref" /> <input type="hidden"
 			value="${dto.re_step}" name="re_step" /> <input type="hidden"
 			value="${dto.re_level}" name="re_level" /> <input type="hidden"
-			value="${param.pageNum}" name="pageNum" /> <input type="button"
-			value="목록" class="list" /> <input type="button" value="답변"
+			value="${param.pageNum}" name="pageNum" /> 
+			<input type="hidden" name="searchKey" value="${param.searchKey}"/>
+			<input type="hidden" name="searchWord" value="${param.searchWord}"/>
+			<input type="button" value="목록" class="list" /> <input type="button" value="답변"
 			class="reply" /> <input type="button" value="수정" class="update" /> <input
 			type="button" value="삭제" class="del" />
 	</form>

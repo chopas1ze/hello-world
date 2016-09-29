@@ -56,7 +56,13 @@ public class BoardDAO {
 			conn=start();
 			String sql = "select b.*";
  sql+=" from(select rownum as rm, a.*";
- sql+=" from(select * from board order by ref desc , re_step asc)a)b"; 
+ sql+=" from(select * from board";
+	if(pdto.getSearchKey() != null){
+		if(pdto.getSearchKey().equals("subject") || pdto.getSearchKey().equals("writer")){
+ sql += " where " + pdto.getSearchKey() + " like '%" + pdto.getSearchWord() + "%'";
+		}
+	}
+ sql+=" order by ref desc , re_step asc)a)b"; 
  sql+=" where b.rm >=? and b.rm <=?";
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setInt(1, pdto.getStartRow());
@@ -221,12 +227,17 @@ public class BoardDAO {
 		
 	}//end reStepMethod()
 	
-	public int rowTotalCount(){
+	public int rowTotalCount(HashMap<String, String> map){
 		int cnt = -1;
 		
 		try {
 			conn=start();
 			String sql = "select count(*) from board";
+			if(map.get("searchKey") != null){
+				if(map.get("searchKey").equals("subject") || map.get("searchKey").equals("writer")){
+					sql += " where " + map.get("searchKey") + " like '%" + map.get("searchWord") + "%'";
+				}
+			}
 			pstmt=conn.prepareStatement(sql);
 			rs=pstmt.executeQuery();
 			if(rs.next())
