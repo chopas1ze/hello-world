@@ -17,7 +17,6 @@
 	$(document).ready(function() {
 		$('.list').bind('click', function() {
 			$('form').attr('action', 'list.do');
-			 
 			$('form').submit();
 		});
 
