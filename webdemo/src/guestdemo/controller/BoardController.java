@@ -11,7 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.oreilly.servlet.MultipartRequest;
 
+import guestdemo.action.DeleteAction;
+import guestdemo.action.FileDownLoadAction;
 import guestdemo.action.ListAction;
+import guestdemo.action.UpdateFormAction;
+import guestdemo.action.UpdateProAction;
 import guestdemo.action.ViewAction;
 import guestdemo.action.WriteAction;
 
@@ -68,8 +72,24 @@ public class BoardController extends HttpServlet {
 			 * param+="&searchWord="+multi.getParameter("searchWord");
 			 */
 			resp.sendRedirect("list.do" + param);
+		} else if (action.equals("/updateForm.do")){
+			UpdateFormAction uform = new UpdateFormAction();
+			uform.excute(req, resp);
+			path = "/guestview/update.jsp?pageNum="+req.getParameter("pageNum");
+		}else if (action.equals("/updatePro.do")){
+			UpdateProAction pro = new UpdateProAction();
+			MultipartRequest multi = pro.execute(req);
+			resp.sendRedirect("list.do?pageNum="+multi.getParameter("pageNum"));
+		}else if (action.equals("/download.do")){
+			FileDownLoadAction download = new FileDownLoadAction();
+			download.execute(req,resp);
+		}else if (action.equals("/delete.do")){
+			DeleteAction delete = new DeleteAction();
+			delete.execute(req, resp);
+			resp.sendRedirect("list.do?pageNum="+req.getParameter("pageNum"));
 		}
-
+		
+		
 		//요청에 따라 path값이 설정 되었을때만 페이지 이동을 한다. 
 		if (path != "") {
 			RequestDispatcher dis = req.getRequestDispatcher(path);

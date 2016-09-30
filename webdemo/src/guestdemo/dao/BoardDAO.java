@@ -48,7 +48,7 @@ public class BoardDAO {
 			conn.close();
 	}// end end()
 
-	
+	//
 	public List<BoardDTO> listMethod(PageDTO pdto){
 		List<BoardDTO> aList=new ArrayList<BoardDTO>();
 		
@@ -257,5 +257,94 @@ public class BoardDAO {
 		
 	 return cnt;
 	}//end rowTotalCount()
+	
+	
+	public void updateMethod(BoardDTO dto){
+		try {
+			conn=start();
+			//if(dto.getUpload()!=null){
+				String sql ="update board set subject=?,email=?,content=?,upload=? where num=?";
+				pstmt=conn.prepareStatement(sql);
+				pstmt.setString(1, dto.getSubject());
+				pstmt.setString(2, dto.getEmail());
+				pstmt.setString(3, dto.getContent());
+				pstmt.setString(4, dto.getUpload());
+				pstmt.setInt(5, dto.getNum());
+			/*}else{
+				String sql ="update board set subject=?,email=?,content=? where num=?";
+				pstmt=conn.prepareStatement(sql);
+				pstmt.setString(1, dto.getSubject());
+				pstmt.setString(2, dto.getEmail());
+				pstmt.setString(3, dto.getContent());
+				pstmt.setInt(4, dto.getNum());
+			}
+			*/
+			pstmt.executeUpdate();
+			
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try {
+				end();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+	}//end updateMethod()
+	
+	public String fileMethod(int num){		
+		String filename=null;
+		
+		try {
+			conn=start();
+			String sql = "select upload from board where num=?";
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			rs=pstmt.executeQuery();
+			if(rs.next()){
+				filename=rs.getString("upload");
+			}
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try {
+				end();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return filename;
+	}//end fileMethod()
+	
+	public void DeleteMethod(int num){
+		try {
+			conn=start();
+			String sql = "delete from board where num=?";
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			pstmt.executeUpdate();
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try {
+				end();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		
+	}//end DeleteMethod()
 	
 }// end class

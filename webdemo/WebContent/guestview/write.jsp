@@ -15,7 +15,11 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-	
+		$("[name=back]").bind("click",function(){
+			$('form').attr('action','list.do?pageNum='+'${param.pageNum}');
+			$('form').submit();
+		});
+		
 		
 	});
 
@@ -94,7 +98,7 @@
 
 			<tr>
 				<td colspan="2" align="center"><input type="submit" value="글쓰기" />&nbsp;&nbsp;&nbsp;
-					<input type="reset" value="취소" /></td>
+					<input type="button" value="취소" name="back" /></td>
 			</tr>
 		</table>
 	</form>

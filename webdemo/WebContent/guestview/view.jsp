@@ -75,6 +75,8 @@
 
 		<tr>
 			<td>파일</td>
+			 <!-- 톰캣이 업그레이드 되면서 파일명이 한글이면 get방식이지만 한글이 깨져서 나온다. 
+			 그래서 num값은 숫자이므로, 잘못될 위험이 없어서 num값을 가지고 다운받는 방식으로 한다. --> 
 			<td colspan="3"><a href="download.do?num=${dto.num}">${dto.upload}</a>
 			</td>
 		</tr>
