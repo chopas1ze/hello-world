@@ -131,7 +131,7 @@
 					<td>${dto.readcount}</td>
 					<c:if test="${dto.upload!=null}">
 						<%-- <c:if test="${!empty dto.upload}"> --%>
-						<td><img src="../guestview/images/save.gif" /></td>
+						<td><img src="../guestview/images/save.gif" title="${dto.upload}"/></td>
 					</c:if>
 
 				</tr>

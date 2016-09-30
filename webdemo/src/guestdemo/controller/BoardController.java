@@ -72,7 +72,7 @@ public class BoardController extends HttpServlet {
 			 * param+="&searchWord="+multi.getParameter("searchWord");
 			 */
 			resp.sendRedirect("list.do" + param);
-		} else if (action.equals("/updateForm.do")){
+		} else if (action.equals("/updateForm.do")){		
 			UpdateFormAction uform = new UpdateFormAction();
 			uform.excute(req, resp);
 			path = "/guestview/update.jsp?pageNum="+req.getParameter("pageNum");
