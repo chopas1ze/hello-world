@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 현재 namespace는 반드시 쓰도록 되어있다. 쿼리문의 중복을 제거하기 위해 namespace 사용
+	 프로젝트 할때도 namespace 를 각자 정해서 해야 한다. -->    
+<mapper namespace="emp">
+<sql id ="sel">
+	select * from employees
+</sql>
+
+
+<!-- 기본객체도 다 써줘야한다. ex) java.lang.String 등등 -->
+<select id="all" resultType="part01.dto.EmployeeDTO">
+	<include refid="sel"/>
+</select>
+
+<select id="cnt" resultType="java.lang.Integer">
+	select count(*) from employees
+</select>
+
+<!-- 파라메타값을 1개 받을 경우 name은 아무거나 써도 된다.-->
+<select id="search" parameterType="java.lang.String" resultType="part01.dto.EmployeeDTO">
+<include refid="sel"/> first_name like '%' || #{name} || '%'
+<!-- like '%' +${name}+'%' -->
+</select>
+
+<!-- 파라메타값이 여러개 있을 경우 컬럼이름을 정확히 써야 된다
+<select id="search" parameterType="part01.dto.EmployeeDTO" resultType="part01.dto.EmployeeDTO">
+select * from employees where first_name like '%' || #{first_name} || '%'
+</select> -->
+
+<select id="part" parameterType="java.util.HashMap" resultType="part01.dto.EmployeeDTO">
+	<include refid="sel"/> where first_name like '%' || #{first_name} || '%' and salary>=#{salary}
+</select>
+
+
+</mapper>
