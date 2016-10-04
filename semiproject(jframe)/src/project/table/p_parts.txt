@@ -1,0 +1,24 @@
+베터리A/베터리/Delkor
+베터리B/베터리/Delkor
+베터리C/베터리/Delkor
+디스크 브레이크A/디스크 브레이크/Hyundai
+디스크 브레이크B/디스크 브레이크/Valeo
+디스크 브레이크C/디스크 브레이크/Bosch
+브레이크 페달A/브레이크 페달/Hi-Q
+브레이크 페달B/브레이크 페달/Hyundai
+브레이크 페달C/브레이크 페달/Ford
+운전대A/운전대/Hyundai
+운전대B/운전대/Hyundai
+운전대C/운전대/Hyundai
+클러치A/클러치/Hyundai
+클러치B/클러치/Hyundai
+클러치C/클러치/Hyundai
+냉각 팬A/냉각 팬/TKFAN
+냉각 팬B/냉각 팬/YCCFAN
+냉각 팬C/냉각 팬/DOOWON
+연료 라인A/연료 라인/Hyundai
+연료 라인B/연료 라인/Hyundai
+연료 라인C/연료 라인/Hyundai
+소음기A/소음기/Hyundai
+소음기B/소음기/Hyundai
+소음기C/소음기/Hyundai
