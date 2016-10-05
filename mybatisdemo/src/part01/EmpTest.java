@@ -10,7 +10,7 @@ public class EmpTest {
 	public static void main(String[] args) {
 
 			EmployeeDAO dao = new EmployeeDAO();
-			//List<EmployeeDTO> list = dao.allMethod();
+			List<EmployeeDTO> list = dao.allMethod();
 			
 			//List<EmployeeDTO> list = dao.searchMethod("lex");
 			
@@ -19,7 +19,7 @@ public class EmpTest {
 			map.put("salary", 9000);
 			//"lex" ,9000
 			
-			List<EmployeeDTO> list=dao.searchMethod(map);
+			//List<EmployeeDTO> list=dao.searchMethod(map);
 			for(EmployeeDTO dto : list)
 				System.out.printf("%s %d %s \n", dto.getFirst_name(), dto.getSalary(), dto.getHire_date());
 			

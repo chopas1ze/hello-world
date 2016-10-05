@@ -6,6 +6,7 @@
 <!-- 현재 namespace는 반드시 쓰도록 되어있다. 쿼리문의 중복을 제거하기 위해 namespace 사용
 	 프로젝트 할때도 namespace 를 각자 정해서 해야 한다. -->    
 <mapper namespace="emp">
+
 <sql id ="sel">
 	select * from employees
 </sql>
@@ -21,7 +22,7 @@
 </select>
 
 <!-- 파라메타값을 1개 받을 경우 name은 아무거나 써도 된다.-->
-<select id="search" parameterType="java.lang.String" resultType="part01.dto.EmployeeDTO">
+<select id="search" parameterType="java.lang.String" resultType="dto">
 <include refid="sel"/> first_name like '%' || #{name} || '%'
 <!-- like '%' +${name}+'%' -->
 </select>
@@ -31,7 +32,7 @@
 select * from employees where first_name like '%' || #{first_name} || '%'
 </select> -->
 
-<select id="part" parameterType="java.util.HashMap" resultType="part01.dto.EmployeeDTO">
+<select id="part" parameterType="java.util.HashMap" resultType="dto">
 	<include refid="sel"/> where first_name like '%' || #{first_name} || '%' and salary>=#{salary}
 </select>
 

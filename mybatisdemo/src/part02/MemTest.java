@@ -34,10 +34,20 @@ public class MemTest {
 			alist.add(10);
 			System.out.println("total 삭제:"+dao.MultiDeleteMethod(alist));*/
 			
-			Integer[] array=new Integer[2];
+			/*Integer[] array=new Integer[2];
 			array[0]=15;
 			array[1]=12;
-			System.out.println("total 삭제:"+dao.MultiDeleteMethod(array));
+			System.out.println("total 삭제:"+dao.MultiDeleteMethod(array));*/
+			
+			MemDTO mt = new MemDTO();
+			mt.setAge(17);
+			//List<MemDTO> list = dao.searchMethod(mt);
+			mt.setNum(21);
+			//dao.multiUptMethod(mt);
+
+			MemDTO mm = new MemDTO("똘똘",27);
+			dao.locInsMethod(mm);
+			
 			
 			System.out.println();
 			

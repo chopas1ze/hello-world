@@ -60,5 +60,74 @@
  </where>
  </delete>
  
+ <!-- dynamic if -->
+ <select id="search" parameterType="part02.dto.MemDTO" resultType="part02.dto.MemDTO">
+ 	select * from mem
+ <!-- 	<where>
+ 	<if test="name!=null">
+ 		name like '%' || #{name} || '%'
+ 	</if>
+ 	<if test="age!=0">
+ 		or age > #{age}
+ 	</if>
+ 	</where> -->
+ 	
+ 	<!-- suffixOverrides 는 앞의 where절의 or이나 and 제거  
+ 	prefixOveerrides 는 뒤의 where절의 or이나 and 제거 -->
+ 	<trim prefix="where" suffixOverrides="or/and">
+ 	<if test="name!=null">
+ 	name like '%' || #{name} || '%' or 
+ 	</if>
+ 	<if test="age!=0">
+ 	age >#{age}
+ 	</if>
+ 	
+ 	</trim>
+ 	order by num desc
+ </select>
+ 
+ <update id="multiUpt" parameterType="part02.dto.MemDTO">
+ 	update mem 
+ <!-- 	<set>
+ 		<if test="name!=null">
+ 			name=#{name},
+ 		</if>
+ 		<if test="age!=0">
+ 			age=#{age},
+ 		</if>
+ 		<if test="loc!=null">
+ 			loc=#{loc}
+ 		</if>
+ 	</set> -->
+ 	<!-- prefix="set"은 컨텐츠가 리턴되기 전에 추가한다.
+ 		suffixOverrides="," 컨텐츠가 리턴되기 전에 제거한다.
+ 		 -->
+ 	<trim prefix="set" suffixOverrides=",">
+ 	<if test="name!=null">
+ 			name=#{name},
+ 		</if>
+ 		<if test="age!=0">
+ 			age=#{age},
+ 		</if>
+ 		<if test="loc!=null">
+ 			loc=#{loc}
+ 		</if>
+ </trim>
+ 	where num=#{num}
+ </update>
+ 
+ <!-- choose 동적 SQL사용 -->
+ <insert id="insData" parameterType="part02.dto.MemDTO">
+  	insert into mem values(mem_num_seq.nextval,#{name},#{age},
+  	<choose>
+  	<when test="loc==null">
+  	'test'
+  	</when>
+  	<otherwise>
+  	#{loc}
+  	</otherwise>
+  	</choose>
+  	)
+ </insert>
  
  </mapper>
