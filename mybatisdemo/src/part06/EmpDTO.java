@@ -1,11 +1,27 @@
-package part05;
+package part06;
 
 import java.util.List;
 
 public class EmpDTO {
 	private String employee_id, first_name, job_id, department_id, location_id, salary;
-	private DeptDTO dept;
-	private LocDTO loc;
+	private List<DeptDTO> dept2;
+	private List<LocDTO> loc2;
+	
+	public List<DeptDTO> getDept2() {
+		return dept2;
+	}
+
+	public void setDept2(List<DeptDTO> dept2) {
+		this.dept2 = dept2;
+	}
+
+	public List<LocDTO> getLoc2() {
+		return loc2;
+	}
+
+	public void setLoc2(List<LocDTO> loc2) {
+		this.loc2 = loc2;
+	}
 
 	public String getSalary() {
 		return salary;
@@ -17,22 +33,6 @@ public class EmpDTO {
 
 
 	
-	public LocDTO getLoc() {
-		return loc;
-	}
-
-	public void setLoc(LocDTO loc) {
-		this.loc = loc;
-	}
-
-	public DeptDTO getDept() {
-		return dept;
-	}
-
-	public void setDept(DeptDTO dept) {
-		this.dept = dept;
-	}
-
 	public String getLocation_id() {
 		return location_id;
 	}

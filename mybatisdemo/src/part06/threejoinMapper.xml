@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="threejoin">
+
+
+<resultMap type="part06.EmpDTO" id="emp_dept_loc_result2">
+<result column="first_name" property="first_name"/>
+<result column="salary" property="salary"/>
+<collection property="dept2" javaType="java.util.List" ofType="part05.DeptDTO">
+<result column="department_name" property="department_name"/>
+</collection>
+<collection property="loc2" javaType="java.util.List" ofType="part05.LocDTO">
+<result column="city" property="city"/>
+</collection>
+</resultMap>
+
+<select id="emp_dept_loc2" resultMap="emp_dept_loc_result2">
+ select l.city, d.department_name, e.first_name, e.salary
+ from locations l, departments d, employees e
+ where l.location_id=d.location_id
+ and d.department_id=e.department_id
+ order by l.city
+</select>
+
+</mapper>

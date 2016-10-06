@@ -58,15 +58,20 @@
 				<th>street_address</th>
 			</tr>
 
+		
 			<c:forEach items="${aList}" var="dto">
+				<c:forEach items="${dto.dept2}" var="dept2">
+					<c:forEach items="${dto.loc2}" var="loc2">
 						<tr>
-							<td>${dto.employee_id}</td>
-							<td>${dto.first_name}</td>
+							<td>${loc2.city}</td>
+							<td>${dept2.department_name}</td>
 							<%-- <td><input type="checkbox" name="chk" value="${dto.num}"/></td> --%>
-							<td>${dto.dept.department_name}</td>
-							<td>${dto.loc.street_address}</td>
+							<td>${dto.first_name}</td>
+							<td>${dto.salary}</td>
 						</tr>
 					</c:forEach>
+				</c:forEach>
+			</c:forEach>
 		</table>
 	</form>
 </body>
