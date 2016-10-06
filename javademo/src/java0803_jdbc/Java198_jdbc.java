@@ -16,8 +16,6 @@ public class Java198_jdbc {
 		
 		dao.updateMethod(map);
 		*/
-	
-		
 		//dao.deleteMethod(1);
 		
 		ArrayList<MemDTO> mData = new 	ArrayList<MemDTO>();
