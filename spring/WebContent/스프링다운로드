@@ -1,0 +1,21 @@
+
+spring.io 접속
+projects -> 맨아래 footer부분에 tools 클릭
+
+see all versions 에서 64bit 스프링 다운로드
+
+
+스프링 설치과정
+1. spring전에 jdk가 먼저 설치되어 있어야한다.
+2. eclipse 다운로드
+3. spring 사이트에서 sts를 다운로드한다.
+
+spring di관련 모듈은 기본적인건 sts에 포함되어있지만, 필요한 모듈은 직접 설치해야한다.
+
+spring.io에서 받는 STS는
+eclipse+sts+maven 이다.
+
+Apache - server
+apache Tomcat - server + container
+Tomcat - container(servlet, jsp)
+
