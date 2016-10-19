@@ -30,4 +30,4 @@ select count(*) from memtab where id='kim' and pass='1234'
 
 
 
-DELETE FROM memtab
+DELETE FROM mem
