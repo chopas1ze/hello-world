@@ -15,15 +15,12 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-		$("[name=back]").bind("click",function(){
-			$('form').attr('action','list.do?pageNum='+'${param.pageNum}');
-			$('form').submit();
-		});
-		
 		
 	});
 
 	function process() {
+		//document.frm.content.value = 
+		// document.frm.content.value.replace( /\n/gi, '<br/>');
 		$('[name=content]').val(
 				$('[name=content]').val().replace(/\n/gi, '<br/>'));
 		return true;
@@ -40,16 +37,15 @@
 
 	<form name="frm" method="post" action="write.do"
 		enctype="multipart/form-data" onsubmit="return process()">
-		
+		<input type="hidden" value="${param.pageNum}" name="pageNum" />
 		<!-- 답변글이면 -->
 		<c:if test="${!empty param.num}">
-	    <input type="hidden" value="${param.num}" name="num"  />       
-        <input type="hidden" value="${param.ref}" name="ref" />
- 		<input type="hidden" value="${param.re_step}" name="re_step" />
- 		<input type="hidden" value="${param.re_level}" name="re_level" />
- 		<input type="hidden" value="${param.pageNum}" name="pageNum" />
-<%--  		<input type="hidden" name="searchKey" value="${param.searchKey}"/>
-		<input type="hidden" name="searchWord" value="${param.searchWord}"/> --%>
+			<input type="hidden" value="${param.num}" name="num" />
+			<input type="hidden" value="${param.ref}" name="ref" />
+			<input type="hidden" value="${param.re_step}" name="re_step" />
+			<input type="hidden" value="${param.re_level}" name="re_level" />
+			<input type="hidden" value="${param.searchKey}" name="searchKey" />
+			<input type="hidden" value="${param.searchWord}" name="searchWord" />
 		</c:if>
 
 		<table>
@@ -69,19 +65,15 @@
 
 			<tr>
 				<td width="20%" align="center">제목</td>
-				<td width="80%">
-				<c:choose>
-				 <c:when test="${empty param.num}">
-				 	<input type="text" name="subject" />
-				 </c:when>
-				 <c:otherwise>
-				    <input type="text" name="subject" value="[답변]" />
-				 </c:otherwise>
-				
-				</c:choose>
-			
-				
-				</td>
+				<td width="80%"><c:choose>
+						<c:when test="${empty param.num}">
+							<input type="text" name="subject" />
+						</c:when>
+						<c:otherwise>
+							<input type="text" name="subject" value="[답변]" />
+						</c:otherwise>
+
+					</c:choose></td>
 			</tr>
 
 			<tr>
@@ -96,7 +88,7 @@
 
 			<tr>
 				<td colspan="2" align="center"><input type="submit" value="글쓰기" />&nbsp;&nbsp;&nbsp;
-					<input type="button" value="취소" name="back" /></td>
+					<input type="reset" value="취소" /></td>
 			</tr>
 		</table>
 	</form>

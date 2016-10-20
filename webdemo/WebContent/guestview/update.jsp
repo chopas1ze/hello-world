@@ -15,18 +15,14 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-     $('[name=content]').val($('[name=content]').val().trim());
-     
-     $("[name=back]").bind("click",function(){
- 		$("form").attr("action","view.do?num="+"${dto.num}");
- 		$("form").submit();
- 		
- 	});
-     
-     
+		$('[name=content]').val($('[name=content]').val().trim());
+
+		$(":reset").click(function() {
+			$("form").attr("action","view.do?num=${param.num}&pageNum=${param.pageNum}&searchKey=${param.searchKey}&searchWord=${param.searchWord}");
+			$("form").submit();
+		});
+
 	});
-	
-	
 
 	function process() {
 		//document.frm.content.value = document.frm.content.value.replace( /\n/gi, '<br//>');
@@ -34,15 +30,15 @@
 				$('[name=content]').val().replace(/\n/gi, '<br/>'));
 		return true;
 	}
-</script> 
+</script>
 </head>
 <body>
 	<%
-	//치환 변수 선언
-			pageContext.setAttribute("cr", "\r"); //Space
-			pageContext.setAttribute("cn", "\n"); //Enter
-			pageContext.setAttribute("crcn", "\r\n"); //Space, Enter
-			pageContext.setAttribute("br", "<br/>"); //br 태그
+		//치환 변수 선언
+		pageContext.setAttribute("cr", "\r"); //Space
+		pageContext.setAttribute("cn", "\n"); //Enter
+		pageContext.setAttribute("crcn", "\r\n"); //Space, Enter
+		pageContext.setAttribute("br", "<br/>"); //br 태그
 	%>
 
 
@@ -53,8 +49,8 @@
 			<tr>
 
 				<td width="20%">글쓴이</td>
-				<td colspan="3"><input type="text" name="writer" 
-					value="${dto.writer}" readonly="readonly"/></td>
+				<td colspan="3"><input type="text" name="writer"
+					readonly="readonly" value="${dto.writer}" /></td>
 
 			</tr>
 
@@ -72,9 +68,10 @@
 
 			<tr>
 				<td>내용</td>
-				<td colspan="3">
-				<textarea rows="15" cols="25" name="content">${dto.content}</textarea>
-				</td>
+				<td colspan="3"><c:set var="test"
+						value="${fn:replace(dto.content,br,crcn)}" /> <textarea rows="15"
+						cols="25" name="content">
+                  <c:out value="${test}" /></textarea></td>
 			</tr>
 
 			<tr>
@@ -87,7 +84,7 @@
 				<td colspan="2" align="center"><input type="hidden"
 					name="pageNum" value="${param.pageNum}" /> <input type="hidden"
 					name="num" value="${dto.num}" /> <input type="submit" value="수정" />&nbsp;&nbsp;
-					<input type="button" value="취소" name="back" /></td>
+					<input type="reset" value="취소" /></td>
 			</tr>
 		</table>
 
