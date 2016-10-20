@@ -24,8 +24,6 @@
 	});
 
 	function process() {
-	//document.frm.content.value = 
-		// document.frm.content.value.replace( /\n/gi, '<br/>');
 		$('[name=content]').val(
 				$('[name=content]').val().replace(/\n/gi, '<br/>'));
 		return true;

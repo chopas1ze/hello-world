@@ -73,9 +73,8 @@
 			<tr>
 				<td>내용</td>
 				<td colspan="3">
-				<c:set var="test" value="${fn:replace(dto.content,br,crcn)}" />				
-				<textarea rows="15" cols="25" name="content">
-                  <c:out value="${test}" /></textarea></td>
+				<textarea rows="15" cols="25" name="content">${dto.content}</textarea>
+				</td>
 			</tr>
 
 			<tr>
