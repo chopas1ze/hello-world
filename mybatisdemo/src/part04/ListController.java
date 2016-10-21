@@ -1,7 +1,6 @@
 package part04;
 
 import java.io.IOException;
-import java.sql.Array;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

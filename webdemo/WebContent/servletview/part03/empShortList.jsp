@@ -2,6 +2,7 @@
 <%@page import="servletdemo.part03.EmployeesDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
@@ -44,7 +45,7 @@ div.wrap p>a {
 					<th>salary</th>
 				</tr>
 			</thead>
-			<tbody>
+			<%-- <tbody>
 				<%
 					for (int i = 0; i < aList.size(); i++) {
 						EmployeesDTO dto = aList.get(i);
@@ -57,6 +58,17 @@ div.wrap p>a {
 				<%
 					}
 				%>
+			</tbody> --%>
+			
+			<tbody>
+			<c:forEach items="${aList}" var="dto">
+			<tr>
+			<td>${dto.employee_id}</td>
+			<td>${dto.first_name}</td>
+			<td>${dto.salary}</td>
+			</tr>
+			</c:forEach>
+			
 			</tbody>
 		</table>
 

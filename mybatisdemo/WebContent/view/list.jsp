@@ -17,7 +17,6 @@ $(document).ready(function(){
    $('#all').click(function(){
 	   //실행후 처음 한번은 checkbox가 선택이 되지만 두번째 부터는
 	   //적용이 안된다. attr('checked',true)로 하면 정적속성만 적용된다.
-	   
 	   $('[type=checkbox]').prop('checked',true);
    });
    
